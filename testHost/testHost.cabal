@@ -1,0 +1,71 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: c8192f4e738edecc7b4d60104b1198162cbcb12455c60392fbef6beaad20705b
+
+name:           testHost
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/testHost#readme>
+homepage:       https://github.com/githubuser/testHost#readme
+bug-reports:    https://github.com/githubuser/testHost/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/testHost
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_testHost
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , http-types
+    , wai
+    , warp
+  default-language: Haskell2010
+
+executable testHost-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_testHost
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , http-types
+    , testHost
+    , wai
+    , warp
+  default-language: Haskell2010
+
+test-suite testHost-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_testHost
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , http-types
+    , testHost
+    , wai
+    , warp
+  default-language: Haskell2010
